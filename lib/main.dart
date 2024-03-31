@@ -1,7 +1,10 @@
 import 'package:doctors/doctor.dart';
-import 'package:doctors/router/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp( const Doctor());
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarIconBrightness: Brightness.dark,
+  ));
+  runApp(const Doctor());
 }
