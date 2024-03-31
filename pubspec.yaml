@@ -59,7 +59,7 @@ dependencies:
   # for responsive design
   flutter_screenutil: ^5.9.0
   # for splash screen
-  flutter_splash_screen: ^3.0.0
+  flutter_native_splash: ^2.2.16
 dev_dependencies:
   flutter_test:
     sdk: flutter
