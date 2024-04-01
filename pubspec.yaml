@@ -43,9 +43,14 @@ dependencies:
   get_it: ^7.6.0
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
-  retrofit: ^4.1.0
-  retrofit_generator: ^8.1.0
-  shared_preferences: ^2.0.15
+  # for returning more than one value
+  dartz: ^0.10.1
+  # for caching images
+  cached_network_image: ^3.2.3
+  # for responsive design
+  flutter_screenutil: ^5.9.0
+  # for splash screen
+  flutter_native_splash: ^2.2.16
 dev_dependencies:
 
   # The "flutter_lints" package below contains a set of recommended lints to
