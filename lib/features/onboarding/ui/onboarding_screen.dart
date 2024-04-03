@@ -1,5 +1,8 @@
-import 'package:doctors/theming/app_colors.dart';
+import 'package:doctors/helper/area_size.dart';
+import 'package:doctors/helper/extensions.dart';
+import 'package:doctors/router/routes.dart';
 import 'package:doctors/theming/font_styles.dart';
+import 'package:doctors/widget/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,9 +13,7 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: SafeArea(
-        
           child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(top: 28.h),
@@ -23,14 +24,14 @@ class OnBoardingScreen extends StatelessWidget {
                 SvgPicture.asset(
                   'assets/svgs/doc_logo.svg',
                 ),
-                SizedBox(
-                  width: 10.w,
+                horizontalSpacer(
+                   10,
                 ),
-                Text('Doctors', style: Styles.font24black700w),
+                Text('Doctors', style: Styles.font24blackw7b),
               ],
             ),
-            SizedBox(
-              height: 30.h,
+           verticalSpacer(
+              30,
             ),
             Stack(
               children: [
@@ -56,7 +57,7 @@ class OnBoardingScreen extends StatelessWidget {
                   child: Text(
                       textAlign: TextAlign.center,
                       'Best Doctor\n Appointment App',
-                      style: Styles.font32blue700w),
+                      style: Styles.font24blurew7b),
                 )
               ],
             ),
@@ -66,22 +67,16 @@ class OnBoardingScreen extends StatelessWidget {
                 Text(
                     'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
                     textAlign: TextAlign.center,
-                    style: Styles.font13grey400w),
-                SizedBox(
-                  height: 20.h,
+                    style: Styles.font13greyw4n),
+                verticalSpacer(
+                   20,
                 ),
-                TextButton(
-                    style: ButtonStyle(
-                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16))),
-                        minimumSize: MaterialStatePropertyAll(
-                            Size(double.infinity, 53.h)),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            ColorManager.mainBlue)),
-                    onPressed: () {},
-                    child: Text('Get Started', style: Styles.font16white600w)),
-                SizedBox(
-                  height: 30.h,
+                AppButton(
+                  buttonName: 'Get Started',
+                  onpress: () => context.pushNamed(Routes.loginScreen),
+                ),
+                verticalSpacer(
+                   30,
                 ),
               ]),
             )
