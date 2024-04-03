@@ -17,7 +17,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey=GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,21 +30,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     const WelcomeText(),
                     verticalSpacer(
-                       36,
+                      36,
                     ),
                     Form(
                       key: formKey,
                       child: Column(children: [
-                        
-                     const AppTextFormField(
-                       hintText: 'Email',
-                     ),
-                        verticalSpacer(
-                           16,
-                        ),
                         const AppTextFormField(
-                       hintText: 'Password',
-                     ),
+                          hintText: 'Email',
+                        ),
+                        verticalSpacer(
+                          16,
+                        ),
+                        AppTextFormField(
+                          hintText: 'Password',
+                          obscureText: obscureText,
+                          suffix: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  obscureText = !obscureText;
+                                });
+                              },
+                              child: obscureText
+                                  ? const Icon(Icons.visibility)
+                                  : const Icon(Icons.visibility_off)),
+                        ),
                         verticalSpacer(
                           16,
                         ),
@@ -82,7 +92,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: EdgeInsets.symmetric(horizontal: 14.w),
                           child: const MyRichText(),
                         ),
-                    
                       ]),
                     )
                   ],
@@ -91,4 +100,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
