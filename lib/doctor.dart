@@ -1,5 +1,5 @@
 import 'package:doctors/router/app_router.dart';
-import 'package:doctors/theming/app_colors.dart';
+import 'package:doctors/theming/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
