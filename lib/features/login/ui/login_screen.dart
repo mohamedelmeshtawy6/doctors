@@ -1,13 +1,23 @@
+import 'package:doctors/features/login/ui/widget/my_rich_text.dart';
 import 'package:doctors/features/login/ui/widget/welcome.dart';
+import 'package:doctors/helper/area_size.dart';
 import 'package:doctors/theming/color_manager.dart';
 import 'package:doctors/theming/font_styles.dart';
-import 'package:doctors/widget/button.dart';
+import 'package:doctors/widget/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatelessWidget {
+import '../../../widget/app_text_form_field.dart';
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final formKey=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,96 +28,67 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const WelcomeText(),
-                    SizedBox(
-                      height: 36.h,
+                    verticalSpacer(
+                       36,
                     ),
-                    Column(children: [
-                      TextFormField(
-                          decoration: InputDecoration(
-                        filled: true,
-                        fillColor: ColorManager.whitegrey,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16)),
-                        hintText: 'Email',
-                        hintStyle: Styles.font15greyw5n,
-                      )),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      TextFormField(
-                          decoration: InputDecoration(
-                        filled: true,
-                        fillColor: ColorManager.whitegrey,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16)),
-                        hintText: 'Passsword',
-                        hintStyle: Styles.font15greyw5n,
-                      )),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: true,
-                            activeColor: Colors.amber,
-                            checkColor: ColorManager.blueCheck,
-                            onChanged: (val) {},
-                          ),
-                          Text(
-                            'Remember',
-                            style: Styles.font13greyw4n,
-                          ),
-                          const Spacer(),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Forgot Password?',
-                                style: Styles.font13bluew4n,
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      Button(
-                        buttonName: 'Login',
-                        onpress: () {},
-                      ),
-                      SizedBox(
-                        height: 110.h,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 14.w),
-                        child: RichText(
-                            text: TextSpan(children: <TextSpan>[
-                          TextSpan(
-                              text: 'By logging, you agree to our ',
-                              style: Styles.font12grey1w4n),
-                          TextSpan(
-                              text: 'Terms & Conditions ',
-                              style: Styles.font12blackw4n),
-                          TextSpan(text: 'and ', style: Styles.font12grey1w4n),
-                          TextSpan(
-                              text: 'PrivacyPolicy.',
-                              style: Styles.font12blackw4n),
-                        ])),
-                      ),
-                      SizedBox(
-                        height: 24.h,
-                      ),
-                      RichText(
-                          text: TextSpan(children: <TextSpan>[
-                        TextSpan(
-                            text: 'Already have an account yet? ',
-                            style: Styles.font12blackw4n),
-                        TextSpan(
-                            text: 'Sign Up  ', style: Styles.font13bluew4n),
-                      ])),
-                    ])
+                    Form(
+                      key: formKey,
+                      child: Column(children: [
+                        
+                     const AppTextFormField(
+                       hintText: 'Email',
+                     ),
+                        verticalSpacer(
+                           16,
+                        ),
+                        const AppTextFormField(
+                       hintText: 'Password',
+                     ),
+                        verticalSpacer(
+                          16,
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: true,
+                              activeColor: Colors.amber,
+                              checkColor: ColorManager.blueCheck,
+                              onChanged: (val) {},
+                            ),
+                            Text(
+                              'Remember',
+                              style: Styles.font13greyw4n,
+                            ),
+                            const Spacer(),
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'Forgot Password?',
+                                  style: Styles.font13bluew4n,
+                                ))
+                          ],
+                        ),
+                        verticalSpacer(
+                          32,
+                        ),
+                        AppButton(
+                          buttonName: 'Login',
+                          onpress: () {},
+                        ),
+                        verticalSpacer(
+                          110,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 14.w),
+                          child: const MyRichText(),
+                        ),
+                    
+                      ]),
+                    )
                   ],
                 ),
               ))),
     );
   }
 }
+

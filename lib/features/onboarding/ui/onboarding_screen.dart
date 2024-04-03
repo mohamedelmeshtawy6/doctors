@@ -1,7 +1,8 @@
+import 'package:doctors/helper/area_size.dart';
 import 'package:doctors/helper/extensions.dart';
 import 'package:doctors/router/routes.dart';
 import 'package:doctors/theming/font_styles.dart';
-import 'package:doctors/widget/button.dart';
+import 'package:doctors/widget/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,14 +24,14 @@ class OnBoardingScreen extends StatelessWidget {
                 SvgPicture.asset(
                   'assets/svgs/doc_logo.svg',
                 ),
-                SizedBox(
-                  width: 10.w,
+                horizontalSpacer(
+                   10,
                 ),
                 Text('Doctors', style: Styles.font24blackw7b),
               ],
             ),
-            SizedBox(
-              height: 30.h,
+           verticalSpacer(
+              30,
             ),
             Stack(
               children: [
@@ -67,15 +68,15 @@ class OnBoardingScreen extends StatelessWidget {
                     'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
                     textAlign: TextAlign.center,
                     style: Styles.font13greyw4n),
-                SizedBox(
-                  height: 20.h,
+                verticalSpacer(
+                   20,
                 ),
-                Button(
+                AppButton(
                   buttonName: 'Get Started',
                   onpress: () => context.pushNamed(Routes.loginScreen),
                 ),
-                SizedBox(
-                  height: 30.h,
+                verticalSpacer(
+                   30,
                 ),
               ]),
             )
