@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class Styles {
-  static TextStyle font12grey1w4n = TextStyle(
+  static TextStyle font12lighterGreyw4n = TextStyle(
       color: ColorManager.lighterGrey, fontWeight:  MyFontWeight.normalw400, fontSize: 12.sp);
   static TextStyle font12blackw4n = TextStyle(
       color: ColorManager.black, fontWeight:  MyFontWeight.normalw400, fontSize: 12.sp);
   static TextStyle font13greyw4n = TextStyle(
       color: ColorManager.grey, fontWeight:  MyFontWeight.normalw400, fontSize: 13.sp);
-  static TextStyle font13bluew4n = TextStyle(
+  static TextStyle font13mainBluew4n = TextStyle(
       color: ColorManager.mainBlue, fontWeight:  MyFontWeight.normalw400, fontSize: 13.sp);
-  static TextStyle font14greyw4n = TextStyle(
+  static TextStyle font14lighterGreyw4n = TextStyle(
       color: ColorManager.lighterGrey, fontWeight:  MyFontWeight.meduimw500, fontSize: 14.sp);
   static TextStyle font15greyw5n = TextStyle(
       color: ColorManager.grey, fontWeight:  MyFontWeight.meduimw500, fontSize: 15.sp);
@@ -20,8 +20,8 @@ abstract class Styles {
       color:  Colors.white, fontWeight:  MyFontWeight.semiBoldw600, fontSize: 16.sp);
   static TextStyle font24blackw7b = TextStyle(
       color: ColorManager.black, fontWeight: MyFontWeight.boldw700, fontSize: 24.sp);
-  static TextStyle font24blurew7b = TextStyle(
+  static TextStyle font24mainBluew7b = TextStyle(
       color: ColorManager.mainBlue, fontWeight: MyFontWeight.boldw700, fontSize: 24.sp);
-  static TextStyle font32bluew7b = TextStyle(
+  static TextStyle font32mainBluew7b = TextStyle(
       color: ColorManager.mainBlue, fontWeight: MyFontWeight.boldw700, fontSize: 32.sp);
 }

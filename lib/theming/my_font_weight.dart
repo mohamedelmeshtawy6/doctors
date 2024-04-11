@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyFontWeight{
+ abstract class MyFontWeight{
 
 static const FontWeight thinw100=FontWeight.w100;
 static const FontWeight externalLightw200=FontWeight.w200;

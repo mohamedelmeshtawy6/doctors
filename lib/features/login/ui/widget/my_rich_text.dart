@@ -16,11 +16,11 @@ class MyRichText extends StatelessWidget {
             text: TextSpan(children: <TextSpan>[
           TextSpan(
               text: 'By logging, you agree to our ',
-              style: Styles.font12grey1w4n.copyWith()),
+              style: Styles.font12lighterGreyw4n.copyWith()),
           TextSpan(
               text: 'Terms & Conditions ',
               style: Styles.font12blackw4n),
-          TextSpan(text: 'and ', style: Styles.font12grey1w4n),
+          TextSpan(text: 'and ', style: Styles.font12lighterGreyw4n),
           TextSpan(
               text: 'PrivacyPolicy.',
               style: Styles.font12blackw4n.copyWith(height: 2)),
@@ -35,7 +35,7 @@ class MyRichText extends StatelessWidget {
                               text: 'Already have an account yet? ',
                               style: Styles.font12blackw4n),
                           TextSpan(
-                              text: 'Sign Up  ', style: Styles.font13bluew4n),
+                              text: 'Sign Up  ', style: Styles.font13mainBluew4n),
                         ])),
       ],
     );

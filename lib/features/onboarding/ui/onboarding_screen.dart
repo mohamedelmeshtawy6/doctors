@@ -57,7 +57,7 @@ class OnBoardingScreen extends StatelessWidget {
                   child: Text(
                       textAlign: TextAlign.center,
                       'Best Doctor\n Appointment App',
-                      style: Styles.font24blurew7b),
+                      style: Styles.font24mainBluew7b),
                 )
               ],
             ),

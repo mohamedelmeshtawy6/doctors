@@ -12,7 +12,7 @@ class WelcomeText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Welcome Back', style: Styles.font24blurew7b),
+        Text('Welcome Back', style: Styles.font24mainBluew7b),
         SizedBox(
           height: 8.h,
         ),

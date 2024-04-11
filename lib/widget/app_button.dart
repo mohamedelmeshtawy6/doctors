@@ -1,7 +1,6 @@
 import 'package:doctors/theming/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../theming/font_styles.dart';
 
