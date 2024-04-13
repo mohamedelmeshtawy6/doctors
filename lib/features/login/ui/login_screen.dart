@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             context.read<LoginCubit>().validatenThenLogin();
                           }),
                       verticalSpacer(
-                        110,
+                        50,
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 14.w),

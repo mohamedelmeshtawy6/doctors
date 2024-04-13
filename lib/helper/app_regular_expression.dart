@@ -3,6 +3,10 @@ class AppRegex {
     return RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
         .hasMatch(email);
   }
+  static bool isPhoneValid(String phone) {
+    return RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$')
+        .hasMatch(phone);
+  }
 
   static bool isPasswordValid(String password) {
     return RegExp(

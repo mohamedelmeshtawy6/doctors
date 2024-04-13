@@ -3,9 +3,11 @@
 import 'package:dio/dio.dart';
 import 'package:doctors/features/login/data/model/login_request_body.dart';
 import 'package:doctors/features/login/data/model/login_response_body.dart';
+import 'package:doctors/features/signup/data/model/signp_request_body.dart';
+import 'package:doctors/features/signup/data/model/signup_response_body.dart';
 import 'package:doctors/networks/api_constance.dart';
 import 'package:retrofit/http.dart';
-part 'api_services.g.dart';
+part'api_services.g.dart';
 @RestApi(baseUrl: ApiConstance.baseUrl)
 abstract class ApiServices{
 
@@ -16,6 +18,10 @@ abstract class ApiServices{
 @POST(ApiConstance.login)
 Future<LoginResposeBody> login(@Body() LoginRequestBody loginRequest);
 
+
+@POST(ApiConstance.register)
+Future<SignUpResponsBody> register(@Body() SignUpRequestBody signUpRequest);
+     
 
 
 }
