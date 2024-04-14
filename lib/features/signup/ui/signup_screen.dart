@@ -19,9 +19,9 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 31.w, vertical: 50.h),
-              child: SingleChildScrollView(
+          child: SingleChildScrollView(
+            child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 31.w, vertical: 50.h),
                 child: Column(
                   children: [
                     const WelcomeText(),
@@ -31,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
                     Column(children: [
                       const FormDataWidget(),
                       verticalSpacer(
-                        32,
+                        22,
                       ),
                       AppButton(
                           buttonName: 'Sign Up',
@@ -75,7 +75,7 @@ class SignUpScreen extends StatelessWidget {
                             }
                           }),
                       verticalSpacer(
-                        50,
+                        30,
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 14.w),
@@ -84,8 +84,8 @@ class SignUpScreen extends StatelessWidget {
                       const SignUpBlocListener(),
                     ])
                   ],
-                ),
-              ))),
+                )),
+          )),
     );
   }
 }

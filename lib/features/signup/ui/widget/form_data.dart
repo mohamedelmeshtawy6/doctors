@@ -122,7 +122,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
                 : const Icon(Icons.visibility_off)),
       ),
         verticalSpacer(
-                        24,
+                        14,
                       ),
                       PasswordValidations(
                         haslength: haslength,
