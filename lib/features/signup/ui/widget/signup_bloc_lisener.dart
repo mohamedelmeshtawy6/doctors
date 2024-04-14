@@ -1,5 +1,8 @@
-import 'package:doctors/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctors/features/login/logic/cubit/login_state.dart';
+
+
+
+import 'package:doctors/features/signup/logic/signup_state.dart';
+import 'package:doctors/features/signup/logic/singup_cubit.dart';
 import 'package:doctors/helper/extensions.dart';
 import 'package:doctors/router/routes.dart';
 import 'package:doctors/theming/color_manager.dart';
@@ -7,13 +10,13 @@ import 'package:doctors/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginBlocListener extends StatelessWidget {
-  const LoginBlocListener({super.key});
+class SignUpBlocListener extends StatelessWidget {
+  const SignUpBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
- return
- BlocListener<LoginCubit, LoginState>(
+    return
+ BlocListener<SignUpCubit, SignUpState>(
   
   listenWhen: (previous, current) {
   return current is Loading || current is Success || current is Failure;
@@ -46,7 +49,7 @@ state.whenOrNull(
         child: Text('Ok',style: Styles.font15greyw5n.copyWith(color: ColorManager.mainBlue),),
         )
       ],
-      icon: Icon(Icons.error,color: Colors.red,),
+      icon: const Icon(Icons.error,color: Colors.red,),
       );
     });
     
@@ -56,6 +59,5 @@ state.whenOrNull(
  },
 child: const SizedBox.shrink(), 
  );
-   }
-
+  }
 }
