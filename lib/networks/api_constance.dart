@@ -1,25 +1,25 @@
 class ApiConstance {
-  static const String baseUrl = "https://vcare.integration25.com/api/";
-  static const String login = "auth/login";
-  static const String register = "auth/register";
+  static const String baseUrl = 'https://vcare.integration25.com/api/';
+  static const String login = 'auth/login';
+  static const String register = 'auth/register';
 }
 
 class ResponseCodeConstance   {
-  static const int SUCCESS = 200; // success with data
-  static const int NO_CONTENT = 201; // success with no data (no content)
-  static const int BAD_REQUEST = 400; // failure, API rejected request
-  static const int UNAUTORISED = 401; // failure, user is not authorised
-  static const int FORBIDDEN = 403; //  failure, API rejected request
-  static const int INTERNAL_SERVER_ERROR = 500; // failure, crash in server side
-  static const int NOT_FOUND = 404; // failure, not found
-  static const int API_LOGIC_ERROR = 422; // API , lOGIC ERROR
+  static const int success = 200; // success with data
+  static const int noContent = 201; // success with no data (no content)
+  static const int badRequest = 400; // failure, API rejected request
+  static const int unauthorized = 401; // failure, user is not authorised
+  static const int forbidden = 403; //  failure, API rejected request
+  static const int internalServerError = 500; // failure, crash in server side
+  static const int notFound = 404; // failure, not found
+  static const int apiLogicalError = 422; // API , lOGIC ERROR
 
   // local status code
-  static const int CONNECT_TIMEOUT = -1;
-  static const int CANCEL = -2;
-  static const int RECIEVE_TIMEOUT = -3;
-  static const int SEND_TIMEOUT = -4;
-  static const int CACHE_ERROR = -5;
-  static const int NO_INTERNET_CONNECTION = -6;
-  static const int DEFAULT = -7;
+  static const int connectTimeout = -1;
+  static const int cancel = -2;
+  static const int reciveTimeout = -3;
+  static const int sendTimeout = -4;
+  static const int cacheError = -5;
+  static const int noInternetConnection = -6;
+  static const int defaultt = -7;
 }

@@ -2,10 +2,9 @@ import 'package:doctors/di/dependancy_injection.dart';
 import 'package:doctors/doctor.dart';
 import 'package:flutter/material.dart';
 
-void main()async{
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
- await init();
+  init();
   runApp(const Doctor());
 }
 
-// i stoped after create email and password widget for login

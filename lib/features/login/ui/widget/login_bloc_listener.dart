@@ -46,7 +46,7 @@ state.whenOrNull(
         child: Text('Ok',style: Styles.font15greyw5n.copyWith(color: ColorManager.mainBlue),),
         )
       ],
-      icon: Icon(Icons.error,color: Colors.red,),
+      icon: const Icon(Icons.error,color: Colors.red,),
       );
     });
     

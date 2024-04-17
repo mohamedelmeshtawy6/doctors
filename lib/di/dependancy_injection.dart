@@ -11,7 +11,7 @@ import 'package:get_it/get_it.dart';
 final getIt=GetIt.instance;
 
 
-Future <void> init() async {
+void init()  {
   // dio&ApiServices
   Dio dio=DioFactory.create();
   getIt.registerLazySingleton<ApiServices>( ()=> ApiServices( dio));

@@ -1,4 +1,3 @@
-import 'package:doctors/features/login/ui/widget/login_bloc_listener.dart';
 import 'package:doctors/features/signup/logic/singup_cubit.dart';
 import 'package:doctors/features/signup/ui/widget/form_data.dart';
 import 'package:doctors/features/signup/ui/widget/my_rich_text.dart';
