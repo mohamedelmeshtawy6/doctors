@@ -5,21 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "doctors",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "doctors (profile mode)",
+            "name": "doctors dev",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor","development","--target","lib/main_dev.dart"],
         },
         {
-            "name": "doctors (release mode)",
+            "name": "doctors production" ,
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
-        }
+            "program": "lib/main_produc.dart",
+            "args": ["--flavor","production","--target","lib/main_produc.dart"],
+        },
     ]
 }
