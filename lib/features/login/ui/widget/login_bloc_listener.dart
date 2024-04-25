@@ -2,7 +2,7 @@ import 'package:doctors/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctors/features/login/logic/cubit/login_state.dart';
 import 'package:doctors/helper/extensions.dart';
 import 'package:doctors/router/routes.dart';
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:doctors/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,7 +43,7 @@ state.whenOrNull(
           Navigator.pop(context);
           
         },
-        child: Text('Ok',style: Styles.font15greyw5n.copyWith(color: ColorManager.mainBlue),),
+        child: Text('Ok',style: Styles.font15greyw5n.copyWith(color: AppColors.mainBlue),),
         )
       ],
       icon: const Icon(Icons.error,color: Colors.red,),

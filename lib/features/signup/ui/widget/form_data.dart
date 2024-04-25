@@ -15,7 +15,8 @@ class FormDataWidget extends StatefulWidget {
 
 class _FormDataWidgetState extends State<FormDataWidget> {
 
-  bool obscureText = true;
+  bool obscurePassword1 = true;
+  bool obscurePassword2 = true;
     bool haslength=false;
   bool hasUppercase=false;
    bool hasLowercase=false;
@@ -28,10 +29,10 @@ class _FormDataWidgetState extends State<FormDataWidget> {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: context.read<SignUpCubit>().formKey,
+        key: context.read<SignupCubit>().formKey,
         child: Column(children: [
       AppTextFormField(
-        controller:context.read<SignUpCubit>().nameController,
+        controller:context.read<SignupCubit>().nameController,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your name';
@@ -43,12 +44,12 @@ class _FormDataWidgetState extends State<FormDataWidget> {
         16,
       ),
       AppTextFormField(
-        controller:context.read<SignUpCubit>().emailController,
+        controller:context.read<SignupCubit>().emailController,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your email';
           }
-          else if (!AppRegex.isEmailValid(value)) {
+          else if (!AppRegularExprission.isEmailValid(value)) {
             return 'Please enter your correct  email';
           }
         
@@ -59,12 +60,12 @@ class _FormDataWidgetState extends State<FormDataWidget> {
         16,
       ),
       AppTextFormField(
-        controller:context.read<SignUpCubit>().phoneController,
+        controller:context.read<SignupCubit>().phoneController,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your phone number';
           }
-          else if (!AppRegex.isPhoneValid(value)) {
+          else if (!AppRegularExprission.isPhoneValid(value)) {
             return 'Please enter valid phone number';
           }
         
@@ -75,24 +76,24 @@ class _FormDataWidgetState extends State<FormDataWidget> {
         16,
       ),
       AppTextFormField(
-        controller:context.read<SignUpCubit>().passwordController,
+        controller:context.read<SignupCubit>().passwordController,
         validator:(value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your password';
           }
-           else if (!AppRegex.isPasswordValid(value)) {
+           else if (!AppRegularExprission.isPasswordValid(value)) {
             return 'Please enter your correct password';
           }
         },
         hintText: 'Password',
-        obscureText: obscureText, 
+        obscureText: obscurePassword1, 
         suffix: GestureDetector(
             onTap: () {
               setState(() {
-                obscureText = !obscureText;
+                obscurePassword1 = !obscurePassword1;
               });
             },
-            child: obscureText
+            child: obscurePassword1
                 ? const Icon(Icons.visibility)
                 : const Icon(Icons.visibility_off)),
       ),
@@ -100,24 +101,24 @@ class _FormDataWidgetState extends State<FormDataWidget> {
                         16,
                       ),
       AppTextFormField(
-        controller:context.read<SignUpCubit>().confirmPasswordController,
+        controller:context.read<SignupCubit>().confirmPasswordController,
         validator:(value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your password ';
           }
-           else if (!AppRegex.isPasswordValid(value)) {
+           else if (!AppRegularExprission.isPasswordValid(value)) {
             return 'Please enter your correct password';
           }
         },
         hintText: 'confirm Password',
-        obscureText: obscureText, 
+        obscureText: obscurePassword2, 
         suffix: GestureDetector(
             onTap: () {
               setState(() {
-                obscureText = !obscureText;
+                obscurePassword2 = !obscurePassword2;
               });
             },
-            child: obscureText
+            child: obscurePassword2
                 ? const Icon(Icons.visibility)
                 : const Icon(Icons.visibility_off)),
       ),

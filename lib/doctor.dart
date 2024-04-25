@@ -1,12 +1,12 @@
 import 'package:doctors/router/app_router.dart';
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'router/routes.dart';
 
-class Doctor extends StatelessWidget {
-  const Doctor({
+class DoctorGeneralSettings extends StatelessWidget {
+  const DoctorGeneralSettings({
     super.key,
   });
 
@@ -21,7 +21,7 @@ class Doctor extends StatelessWidget {
           title: 'Doctors',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: ColorManager.mainBlue,
+            primaryColor: AppColors.mainBlue,
            scaffoldBackgroundColor: Colors.white,
           ),
           initialRoute: Routes.onboardingScreen,

@@ -1,10 +1,10 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:doctors/features/login/data/model/login_request_body.dart';
-import 'package:doctors/features/login/data/model/login_response_body.dart';
-import 'package:doctors/features/signup/data/model/signp_request_body.dart';
-import 'package:doctors/features/signup/data/model/signup_response_body.dart';
+import 'package:doctors/features/login/data/model/login_request_model.dart';
+import 'package:doctors/features/login/data/model/login_response_model.dart';
+import 'package:doctors/features/signup/data/model/signup_request_model.dart';
+import 'package:doctors/features/signup/data/model/signup_response_model.dart';
 import 'package:doctors/networks/api_constance.dart';
 import 'package:retrofit/http.dart';
 part'api_services.g.dart';
@@ -15,12 +15,13 @@ abstract class ApiServices{
   String baseUrl,
 }) =_ApiServices;
 
+
 @POST(ApiConstance.login)
-Future<LoginResposeBody> login(@Body() LoginRequestBody loginRequest);
+Future<LoginResposeModel> login(@Body() LoginRequestModel loginRequest);
 
 
 @POST(ApiConstance.register)
-Future<SignUpResponsBody> register(@Body() SignUpRequestBody signUpRequest);
+Future<SignUpResponsModel> register(@Body() SignUpRequestModel signUpRequest);
      
 
 

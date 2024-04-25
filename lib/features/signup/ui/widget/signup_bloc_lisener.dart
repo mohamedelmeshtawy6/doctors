@@ -5,7 +5,7 @@ import 'package:doctors/features/signup/logic/signup_state.dart';
 import 'package:doctors/features/signup/logic/singup_cubit.dart';
 import 'package:doctors/helper/extensions.dart';
 import 'package:doctors/router/routes.dart';
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:doctors/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +16,7 @@ class SignUpBlocListener extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
- BlocListener<SignUpCubit, SignUpState>(
+ BlocListener<SignupCubit, SignupState>(
   
   listenWhen: (previous, current) {
   return current is Loading || current is Success || current is Failure;
@@ -46,7 +46,7 @@ state.whenOrNull(
           Navigator.pop(context);
           
         },
-        child: Text('Ok',style: Styles.font15greyw5n.copyWith(color: ColorManager.mainBlue),),
+        child: Text('Ok',style: Styles.font15greyw5n.copyWith(color: AppColors.mainBlue),),
         )
       ],
       icon: const Icon(Icons.error,color: Colors.red,),

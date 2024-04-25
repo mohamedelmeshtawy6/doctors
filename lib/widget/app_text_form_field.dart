@@ -1,4 +1,4 @@
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,6 +34,7 @@ class AppTextFormField extends StatelessWidget {
     return TextFormField(
         validator: (val){return validator(val);},
         obscureText: obscureText ?? false,
+        controller:controller,
         decoration: InputDecoration(
           filled: true,
           isDense: true,
@@ -41,7 +42,7 @@ class AppTextFormField extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(
               horizontal: contentPaddingHorizontal?.w ?? 20.w,
               vertical: contentPaddingVertical?.h ?? 16.h),
-          fillColor: fillColor ?? ColorManager.morelighterGrey,
+          fillColor: fillColor ?? AppColors.morelighterGrey,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(borderRidus ?? 16)),
           hintText: hintText,
@@ -49,11 +50,11 @@ class AppTextFormField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(borderRidus ?? 16),
               borderSide:
-                  BorderSide(color: focusColor ?? ColorManager.mainBlue)),
+                  BorderSide(color: focusColor ?? AppColors.mainBlue)),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(borderRidus ?? 16),
               borderSide: BorderSide(
-                  color: activeColor ?? ColorManager.morelighterGrey)),
+                  color: activeColor ?? AppColors.morelighterGrey)),
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(borderRidus ?? 16),
               borderSide: const BorderSide(color: Colors.red,width: 1.3)),

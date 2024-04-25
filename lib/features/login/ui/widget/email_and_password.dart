@@ -16,30 +16,35 @@ class EmailAndPassword extends StatefulWidget {
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool obscureText = true;
-    bool haslength=false;
+  bool haslength=false;
   bool hasUppercase=false;
-   bool hasLowercase=false;
-   bool hasNumber=false;
-   bool hasSpecialChar=false;
-   TextEditingController passwordcontroller =TextEditingController();
+  bool hasLowercase=true;
+  bool hasNumber=false;
+  bool hasSpecialChar=false;
+  late TextEditingController passwordcontroller ;
   @override
   void initState(){
 super.initState();
-   // passwordcontroller = context.read<LoginCubit>().passwordController;
-    setUpPasswordAddListener();
+    passwordcontroller = context.read<LoginCubit>().passwordController;
+    addListenerToPassword();
 
   }
+  @override
+  void dispose(){
+    passwordcontroller.dispose();
+    super.dispose();
+  }
 
- setUpPasswordAddListener(){
-
-   passwordcontroller.addListener(() {
+ addListenerToPassword(){
+  passwordcontroller.addListener(() {
    //! this instruction can't excute 
+   print(passwordcontroller.text);
      setState(() {
-       hasUppercase=AppRegex.hasUpperCase(passwordcontroller.text);
-       hasLowercase=AppRegex.hasLowerCase(passwordcontroller.text);
-       hasNumber=AppRegex.hasNumber(passwordcontroller.text);
-       hasSpecialChar=AppRegex.hasSpecialCharacter(passwordcontroller.text);
-       haslength=AppRegex.hasMinLength(passwordcontroller.text);
+      hasUppercase=AppRegularExprission.hasUpperCase(passwordcontroller.text);
+       hasLowercase=AppRegularExprission.hasLowerCase(passwordcontroller.text);
+       hasNumber=AppRegularExprission.hasNumber(passwordcontroller.text);
+       hasSpecialChar=AppRegularExprission.hasSpecialCharacter(passwordcontroller.text);
+       haslength=AppRegularExprission.hasMinLength(passwordcontroller.text);
 
      });
    });
@@ -55,10 +60,9 @@ super.initState();
           if (value == null || value.isEmpty) {
             return 'Please enter your email';
           }
-          else if (!AppRegex.isEmailValid(value)) {
+          else if (!AppRegularExprission.isEmailValid(value)) {
             return 'Please enter your correct  email';
           }
-        
         },
         hintText: 'Email',
       ),
@@ -66,12 +70,12 @@ super.initState();
         16,
       ),
       AppTextFormField(
-        controller:context.read<LoginCubit>().passwordController,
+        controller: passwordcontroller,
         validator:(value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your password';
           }
-           else if (!AppRegex.isPasswordValid(value)) {
+           else if (!AppRegularExprission.isPasswordValid(value)) {
             return 'Please enter your correct password';
           }
         },

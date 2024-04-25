@@ -5,7 +5,7 @@ import 'package:doctors/features/login/ui/widget/login_bloc_listener.dart';
 import 'package:doctors/features/login/ui/widget/my_rich_text.dart';
 import 'package:doctors/features/login/ui/widget/welcome.dart';
 import 'package:doctors/helper/area_size.dart';
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:doctors/theming/font_styles.dart';
 import 'package:doctors/widget/app_button.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Checkbox(
                             value: true,
                             activeColor: Colors.amber,
-                            checkColor: ColorManager.moreBlue,
+                            checkColor: AppColors.moreBlue,
                             onChanged: (val) {},
                           ),
                           Text(

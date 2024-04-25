@@ -1,4 +1,4 @@
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +22,7 @@ class AppButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular( borderRiduis??16))),
             minimumSize: MaterialStatePropertyAll(Size(buttonWidth?? double.infinity,buttonHeight?? 53.h)),
             backgroundColor:
-                MaterialStateProperty.all<Color>( backgroundColor?? ColorManager.mainBlue)),
+                MaterialStateProperty.all<Color>( backgroundColor?? AppColors.mainBlue)),
         onPressed: onpress,
         child: Text(buttonName, style:textstyle?? Styles.font16whitew6b));
   }

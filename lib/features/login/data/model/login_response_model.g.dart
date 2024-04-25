@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response_body.dart';
+part of 'login_response_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResposeBody _$LoginResposeBodyFromJson(Map<String, dynamic> json) =>
-    LoginResposeBody(
+LoginResposeModel _$LoginResposeModelFromJson(Map<String, dynamic> json) =>
+    LoginResposeModel(
       message: json['message'] as String?,
       dataInformation: json['data'] == null
           ? null
@@ -16,7 +16,7 @@ LoginResposeBody _$LoginResposeBodyFromJson(Map<String, dynamic> json) =>
       code: json['code'] as String?,
     );
 
-Map<String, dynamic> _$LoginResposeBodyToJson(LoginResposeBody instance) =>
+Map<String, dynamic> _$LoginResposeModelToJson(LoginResposeModel instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.dataInformation,

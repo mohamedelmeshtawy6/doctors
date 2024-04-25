@@ -1,10 +1,10 @@
 
 
 import 'package:json_annotation/json_annotation.dart';
-part'signup_request_body.g.dart';
+part 'signup_request_model.g.dart';
 @JsonSerializable()
-class SignUpRequestBody {
-  SignUpRequestBody({
+class SignUpRequestModel {
+  SignUpRequestModel({
     required this.email,
     required this.password,
     required this.confirmPassword,
@@ -15,7 +15,7 @@ class SignUpRequestBody {
    
    final String email;
    final String password;
-   @JsonKey(name: 'password_confirmation')
+   @JsonKey(name:'password_confirmation')
    final String confirmPassword;
    final String name;
    final String gender;
@@ -23,6 +23,6 @@ class SignUpRequestBody {
 
 
 
-   Map<String, dynamic> toJson() => _$SignUpRequestBodyToJson(this);
+   Map<String, dynamic> toJson() => _$SignUpRequestModelToJson(this);
 
 }
