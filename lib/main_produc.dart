@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  init();
-  runApp(const Doctor());
+  createAndRegisterDependencies();
+  runApp(const DoctorGeneralSettings());
 }
 

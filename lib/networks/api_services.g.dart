@@ -21,14 +21,14 @@ class _ApiServices implements ApiServices {
   String? baseUrl;
 
   @override
-  Future<LoginResposeBody> login(LoginRequestBody loginRequest) async {
+  Future<LoginResposeModel> login(LoginRequestModel loginRequest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(loginRequest.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResposeBody>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<LoginResposeModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -44,19 +44,19 @@ class _ApiServices implements ApiServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = LoginResposeBody.fromJson(_result.data!);
+    final value = LoginResposeModel.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<SignUpResponsBody> register(SignUpRequestBody signUpRequest) async {
+  Future<SignUpResponsModel> register(SignUpRequestModel signUpRequest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(signUpRequest.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<SignUpResponsBody>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<SignUpResponsModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -72,7 +72,7 @@ class _ApiServices implements ApiServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SignUpResponsBody.fromJson(_result.data!);
+    final value = SignUpResponsModel.fromJson(_result.data!);
     return value;
   }
 

@@ -11,16 +11,16 @@ import 'package:get_it/get_it.dart';
 final getIt=GetIt.instance;
 
 
-void init()  {
+void createAndRegisterDependencies()  {
   // dio&ApiServices
-  Dio dio=DioFactory.create();
+  Dio dio=DioFactory.createOrGetDioInstance();
   getIt.registerLazySingleton<ApiServices>( ()=> ApiServices( dio));
   //login
   getIt.registerLazySingleton<LoginRepo>(()=>LoginRepo( getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   //register
   getIt.registerLazySingleton<SignUpRepo>(()=>SignUpRepo( getIt()));
-  getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
+  getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
   
   
 

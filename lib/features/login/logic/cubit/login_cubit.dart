@@ -1,4 +1,4 @@
-import 'package:doctors/features/login/data/model/login_request_body.dart';
+import 'package:doctors/features/login/data/model/login_request_model.dart';
 import 'package:doctors/features/login/data/repo/login_repo.dart';
 import 'package:doctors/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<void> emitLoginStates() async {
     emit(const LoginState.loading());
-    final result = await _loginRepo.login(LoginRequestBody(
+    final result = await _loginRepo.login(LoginRequestModel(
         email: emailController.text, password: passwordController.text));
     result.when(success: (loginresponse) {
       emit(LoginState.success(data: loginresponse));

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorManager {
+abstract class AppColors {
   static const Color mainBlue = Color(0xFF247CFF);
   static const Color moreBlue = Color.fromARGB(255, 32, 108, 221);
   static const Color grey = Color(0xFF757575);

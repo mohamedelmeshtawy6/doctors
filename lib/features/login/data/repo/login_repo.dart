@@ -1,5 +1,5 @@
-import 'package:doctors/features/login/data/model/login_request_body.dart';
-import 'package:doctors/features/login/data/model/login_response_body.dart';
+import 'package:doctors/features/login/data/model/login_request_model.dart';
+import 'package:doctors/features/login/data/model/login_response_model.dart';
 import 'package:doctors/networks/api_error_handler.dart';
 import 'package:doctors/networks/api_result.dart';
 import 'package:doctors/networks/api_services.dart';
@@ -11,7 +11,7 @@ class LoginRepo{
 
   LoginRepo( this._apiServices);
 
-Future <ApiResult<LoginResposeBody>> login( LoginRequestBody loginRequest) async{
+Future <ApiResult<LoginResposeModel>> login( LoginRequestModel loginRequest) async{
    
   try{
 
@@ -22,7 +22,7 @@ Future <ApiResult<LoginResposeBody>> login( LoginRequestBody loginRequest) async
 
   catch(e){
     
-    return ApiResult.failure(ErrorHndler.handle(e));
+    return ApiResult.failure(ApiErrorHandler.handle(e));
   }
   
   

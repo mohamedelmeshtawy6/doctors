@@ -4,7 +4,7 @@ import 'package:doctors/features/signup/ui/widget/my_rich_text.dart';
 import 'package:doctors/features/signup/ui/widget/signup_bloc_lisener.dart';
 import 'package:doctors/features/signup/ui/widget/welcome_text.dart';
 import 'package:doctors/helper/area_size.dart';
-import 'package:doctors/theming/color_manager.dart';
+import 'package:doctors/theming/app_colors.dart';
 import 'package:doctors/theming/font_styles.dart';
 import 'package:doctors/widget/app_button.dart';
 import 'package:flutter/material.dart';
@@ -36,14 +36,14 @@ class SignUpScreen extends StatelessWidget {
                           buttonName: 'Sign Up',
                           onpress: () {
                             if (context
-                                    .read<SignUpCubit>()
+                                    .read<SignupCubit>()
                                     .passwordController
                                     .text ==
                                 context
-                                    .read<SignUpCubit>()
+                                    .read<SignupCubit>()
                                     .confirmPasswordController
                                     .text) {
-                              context.read<SignUpCubit>().validatenThenSignUp();
+                              context.read<SignupCubit>().validatenThenSignUp();
                             } else {
                               showDialog(
                                   context: context,
@@ -61,7 +61,7 @@ class SignUpScreen extends StatelessWidget {
                                             style: Styles.font15greyw5n
                                                 .copyWith(
                                                     color:
-                                                        ColorManager.mainBlue),
+                                                        AppColors.mainBlue),
                                           ),
                                         )
                                       ],
