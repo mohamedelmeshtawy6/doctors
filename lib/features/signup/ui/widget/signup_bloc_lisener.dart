@@ -3,10 +3,10 @@
 
 import 'package:doctors/features/signup/logic/signup_state.dart';
 import 'package:doctors/features/signup/logic/singup_cubit.dart';
-import 'package:doctors/helper/extensions.dart';
-import 'package:doctors/router/routes.dart';
-import 'package:doctors/theming/app_colors.dart';
-import 'package:doctors/theming/font_styles.dart';
+import 'package:doctors/core/helper/extensions.dart';
+import 'package:doctors/core/router/routes.dart';
+import 'package:doctors/core/theming/app_colors.dart';
+import 'package:doctors/core/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

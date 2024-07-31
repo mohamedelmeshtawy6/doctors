@@ -1,9 +1,9 @@
-import 'package:doctors/theming/app_colors.dart';
-import 'package:doctors/theming/font_styles.dart';
+import 'package:doctors/core/theming/app_colors.dart';
+import 'package:doctors/core/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../helper/area_size.dart';
+import '../../../../core/helper/area_size.dart';
 
 class PasswordValidations extends StatelessWidget {
   final bool haslength;

@@ -2,9 +2,9 @@
 
 import 'package:doctors/features/signup/data/model/signup_request_model.dart';
 import 'package:doctors/features/signup/data/model/signup_response_model.dart';
-import 'package:doctors/networks/api_error_handler.dart';
-import 'package:doctors/networks/api_result.dart';
-import 'package:doctors/networks/api_services.dart';
+import 'package:doctors/core/networks/api_error_handler.dart';
+import 'package:doctors/core/networks/api_result.dart';
+import 'package:doctors/core/networks/api_services.dart';
 
 class SignUpRepo{
 

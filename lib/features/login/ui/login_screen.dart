@@ -1,13 +1,18 @@
 
+
+import 'dart:developer';
+
 import 'package:doctors/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctors/features/login/ui/widget/email_and_password.dart';
 import 'package:doctors/features/login/ui/widget/login_bloc_listener.dart';
 import 'package:doctors/features/login/ui/widget/my_rich_text.dart';
 import 'package:doctors/features/login/ui/widget/welcome.dart';
-import 'package:doctors/helper/area_size.dart';
-import 'package:doctors/theming/app_colors.dart';
-import 'package:doctors/theming/font_styles.dart';
-import 'package:doctors/widget/app_button.dart';
+import 'package:doctors/core/helper/area_size.dart';
+
+
+import 'package:doctors/core/widget/app_button.dart';
+import 'package:doctors/features/setting/logic/cubit/setting_cubit.dart';
+import 'package:doctors/features/setting/ui/setting_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,34 +44,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       verticalSpacer(
                         16,
                       ),
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: true,
-                            activeColor: Colors.amber,
-                            checkColor: AppColors.moreBlue,
-                            onChanged: (val) {},
-                          ),
-                          Text(
-                            'Remember',
-                            style: Styles.font13greyw4n,
-                          ),
-                          const Spacer(),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Forgot Password?',
-                                style: Styles.font13mainBluew4n,
-                              ))
-                        ],
-                      ),
+                  
                       verticalSpacer(
                         32,
                       ),
                       AppButton(
                           buttonName: 'Login',
-                          onpress: () {
-                            context.read<LoginCubit>().validatenThenLogin();
+                          onpress: ()async {
+                      bool result=   await context.read<SettingCubit>().checkInternetConnection();
+                        result?    context.read<LoginCubit>().validatenThenLogin():  log('no internet');
                           }),
                       verticalSpacer(
                         50,
@@ -76,6 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: const MyRichText(),
                       ),
                       const LoginBlocListener(),
+                      const SettingBlocListener()
                     ])
                   ],
                 ),
@@ -83,6 +70,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
- 
 }
 

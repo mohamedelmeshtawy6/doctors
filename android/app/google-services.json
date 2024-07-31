@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878308519120",
+    "project_id": "waged-medical",
+    "storage_bucket": "waged-medical.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878308519120:android:681fa23c705a94d89682d5",
+        "android_client_info": {
+          "package_name": "com.waged.medical"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIUv2jw6f3vq2vFulvO3mPqHWLHbkZAg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

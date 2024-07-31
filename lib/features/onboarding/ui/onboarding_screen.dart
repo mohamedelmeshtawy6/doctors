@@ -1,8 +1,8 @@
-import 'package:doctors/helper/area_size.dart';
-import 'package:doctors/helper/extensions.dart';
-import 'package:doctors/router/routes.dart';
-import 'package:doctors/theming/font_styles.dart';
-import 'package:doctors/widget/app_button.dart';
+import 'package:doctors/core/helper/area_size.dart';
+import 'package:doctors/core/helper/extensions.dart';
+import 'package:doctors/core/router/routes.dart';
+import 'package:doctors/core/theming/font_styles.dart';
+import 'package:doctors/core/widget/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,7 +27,7 @@ class OnBoardingScreen extends StatelessWidget {
                 horizontalSpacer(
                    10,
                 ),
-                Text('Doctors', style: Styles.font24blackw7b),
+                Text('Waged Medical', style: Styles.font24blackw7b),
               ],
             ),
            verticalSpacer(
@@ -65,15 +65,32 @@ class OnBoardingScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 33.w),
               child: Column(children: [
                 Text(
-                    'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
+                    'Manage and schedule all of your medical appointments easily with waged medical to get a new experience.',
                     textAlign: TextAlign.center,
                     style: Styles.font13greyw4n),
                 verticalSpacer(
                    20,
                 ),
-                AppButton(
-                  buttonName: 'Get Started',
-                  onpress: () => context.pushNamed(Routes.loginScreen),
+                Row(
+                  children: [
+
+                    SizedBox(
+                      width: 120.w,
+
+                      child: AppButton(
+                        buttonName: 'Contact Us',
+                        onpress: () => context.pushNamed(Routes.loginScreen),
+                      ),
+                    ),
+                    horizontalSpacer(30),
+                    SizedBox(
+                      width: 150.w,
+                      child: AppButton(
+                        buttonName: 'Get Started',
+                        onpress: () => context.pushNamed(Routes.loginScreen),
+                      ),
+                    ),
+                  ],
                 ),
                 verticalSpacer(
                    30,

@@ -1,9 +1,12 @@
-import 'package:doctors/router/app_router.dart';
-import 'package:doctors/theming/app_colors.dart';
+import 'package:doctors/core/di/dependancy_injection.dart';
+import 'package:doctors/core/router/app_router.dart';
+import 'package:doctors/core/theming/app_colors.dart';
+import 'package:doctors/features/setting/logic/cubit/setting_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'router/routes.dart';
+import 'core/router/routes.dart';
 
 class DoctorGeneralSettings extends StatelessWidget {
   const DoctorGeneralSettings({
@@ -17,15 +20,18 @@ class DoctorGeneralSettings extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          title: 'Doctors',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primaryColor: AppColors.mainBlue,
-           scaffoldBackgroundColor: Colors.white,
+        return BlocProvider(
+          create: (context) => getIt<SettingCubit>(),
+          child: MaterialApp(
+            title: 'Doctors',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primaryColor: AppColors.mainBlue,
+              scaffoldBackgroundColor: Colors.white,
+            ),
+            initialRoute: Routes.onboardingScreen,
+            onGenerateRoute: AppRouter.generateRoute,
           ),
-          initialRoute: Routes.onboardingScreen,
-          onGenerateRoute: AppRouter.generateRoute,
         );
       },
     );

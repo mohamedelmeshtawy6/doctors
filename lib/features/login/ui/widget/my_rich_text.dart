@@ -1,9 +1,9 @@
-import 'package:doctors/helper/area_size.dart';
-import 'package:doctors/helper/extensions.dart';
-import 'package:doctors/theming/font_styles.dart';
+import 'package:doctors/core/helper/area_size.dart';
+import 'package:doctors/core/helper/extensions.dart';
+import 'package:doctors/core/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../router/routes.dart';
+import '../../../../core/router/routes.dart';
 
 class MyRichText extends StatelessWidget {
   const MyRichText({
@@ -42,7 +42,7 @@ class MyRichText extends StatelessWidget {
                                 text: 'Don\'t have an account yet? ',
                                 style: Styles.font12blackw4n),
                             TextSpan(
-                                text: 'Sign Up  ', style: Styles.font13mainBluew4n),
+                                text: 'Contact Us  ', style: Styles.font13mainBluew4n),
                           ])),
                         ),
       ],

@@ -1,9 +1,11 @@
+import 'dart:developer';
+
 import 'package:doctors/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctors/features/login/logic/cubit/login_state.dart';
-import 'package:doctors/helper/extensions.dart';
-import 'package:doctors/router/routes.dart';
-import 'package:doctors/theming/app_colors.dart';
-import 'package:doctors/theming/font_styles.dart';
+import 'package:doctors/core/helper/extensions.dart';
+import 'package:doctors/core/router/routes.dart';
+import 'package:doctors/core/theming/app_colors.dart';
+import 'package:doctors/core/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +18,7 @@ class LoginBlocListener extends StatelessWidget {
  BlocListener<LoginCubit, LoginState>(
   
   listenWhen: (previous, current) {
-  return current is Loading || current is Success || current is Failure;
+  return current is Loading || current is Success || current is Failed;
   },
   listener: (context, state) {
 
@@ -34,10 +36,10 @@ state.whenOrNull(
     context.pushNamed(Routes.homeScreen);
 
   },
-  failure: (errorhandler){
+  failed: (errorhandler){
     Navigator.pop(context);
     showDialog(context: context, builder: (context){
-      return AlertDialog(content: Text(errorhandler),
+      return AlertDialog(content: SingleChildScrollView(child: Text(errorhandler)),
       actions: [
         TextButton(onPressed: (){
           Navigator.pop(context);

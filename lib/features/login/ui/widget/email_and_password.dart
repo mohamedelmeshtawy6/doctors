@@ -1,7 +1,6 @@
-import 'package:doctors/features/login/ui/widget/password_validations.dart';
-import 'package:doctors/helper/app_regular_expression.dart';
-import 'package:doctors/helper/area_size.dart';
-import 'package:doctors/widget/app_text_form_field.dart';
+import 'package:doctors/core/helper/app_regular_expression.dart';
+import 'package:doctors/core/helper/area_size.dart';
+import 'package:doctors/core/widget/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -55,14 +54,27 @@ super.initState();
         key: context.read<LoginCubit>().formKey,
         child: Column(children: [
       AppTextFormField(
+        controller:context.read<LoginCubit>().urlController,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please enter your url';
+          }
+          else if (!AppRegularExprission.isValidUrl(value)) {
+            return 'Please enter your correct  url';
+          }
+        },
+        hintText: 'URL',
+      ),
+         verticalSpacer(
+        16,
+      ),
+      AppTextFormField(
         controller:context.read<LoginCubit>().emailController,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return 'Please enter your email';
           }
-          else if (!AppRegularExprission.isEmailValid(value)) {
-            return 'Please enter your correct  email';
-          }
+          
         },
         hintText: 'Email',
       ),
@@ -75,9 +87,7 @@ super.initState();
           if (value == null || value.isEmpty) {
             return 'Please enter your password';
           }
-           else if (!AppRegularExprission.isPasswordValid(value)) {
-            return 'Please enter your correct password';
-          }
+          
         },
         hintText: 'Password',
         obscureText: obscureText, 
@@ -94,14 +104,14 @@ super.initState();
         verticalSpacer(
                         24,
                       ),
-                      PasswordValidations(
+                   /*    PasswordValidations(
                         haslength: haslength,
                         hasUppercase: hasUppercase,
                         hasLowercase: hasLowercase,
                         hasNumber: hasNumber,
                         hasSpecialChar: hasSpecialChar,
 
-                      )
+                      ) */
     ]));
   }
 

@@ -6,5 +6,5 @@ part 'login_state.freezed.dart';
   const factory LoginState.initial() = _Initial;
   const factory LoginState.loading() = Loading;
   const factory LoginState.success({required T data}) = Success<T>;
-  const factory LoginState.failure({required String failure}) = Failure;
+  const factory LoginState.failed({required String error}) = Failed;
 }
