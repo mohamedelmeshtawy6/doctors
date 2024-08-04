@@ -85,6 +85,7 @@ class _SearchForPatientState extends State<SearchForPatient> {
       );
     }
   }
+  
 
   stopsearch() {
     setState(() {
