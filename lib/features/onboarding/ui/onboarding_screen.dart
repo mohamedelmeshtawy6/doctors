@@ -1,5 +1,6 @@
 import 'package:doctors/core/helper/area_size.dart';
 import 'package:doctors/core/helper/extensions.dart';
+import 'package:doctors/core/helper/url_launcher.dart';
 import 'package:doctors/core/router/routes.dart';
 import 'package:doctors/core/theming/font_styles.dart';
 import 'package:doctors/core/widget/app_button.dart';
@@ -79,7 +80,10 @@ class OnBoardingScreen extends StatelessWidget {
 
                       child: AppButton(
                         buttonName: 'Contact Us',
-                        onpress: () => context.pushNamed(Routes.loginScreen),
+                        onpress: ()async {
+                                        await launchInBrowser(Uri.parse('https://www.gp2it.com/contactus'));
+
+                        },
                       ),
                     ),
                     horizontalSpacer(30),

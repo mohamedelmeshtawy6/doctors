@@ -1,6 +1,8 @@
 import 'package:doctors/core/di/dependancy_injection.dart';
+import 'package:doctors/features/consult/ui/consult_screen.dart';
 import 'package:doctors/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctors/features/login/ui/login_screen.dart';
+import 'package:doctors/features/patientform/ui/patient_form_screen.dart';
 import 'package:doctors/features/signup/logic/singup_cubit.dart';
 import 'package:doctors/features/signup/ui/signup_screen.dart';
 import 'package:doctors/core/router/routes.dart';
@@ -32,6 +34,14 @@ abstract class AppRouter {
         return MaterialPageRoute(
             builder: (context) => const HomeScreen()
         ) ;  
+         case Routes.consultScreen:
+        return MaterialPageRoute(
+            builder: (context) =>  ConsultScreen()
+        ) ;  
+          case Routes.patientFormScreen:
+        return MaterialPageRoute(
+            builder: (context) =>  PaientFormScreen()
+        ) ; 
       default:
         return MaterialPageRoute(
             builder: (context) => Scaffold(

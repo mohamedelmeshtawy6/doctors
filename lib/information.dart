@@ -17,5 +17,7 @@
 
 
 //for run flavor in realse mode
-//flutter run --release -t lib/main_produc.dart --flavor production
+//flutter run --release -t "lib/main_produc.dart" --flavor "production"
 
+// for buid apk for favor
+//flutter build apk --flavor "production" -t "lib/main_produc.dart"

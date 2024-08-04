@@ -1,5 +1,6 @@
 import 'package:doctors/core/helper/area_size.dart';
 import 'package:doctors/core/helper/extensions.dart';
+import 'package:doctors/core/helper/url_launcher.dart';
 import 'package:doctors/core/theming/font_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -36,14 +37,20 @@ class MyRichText extends StatelessWidget {
                           onTap: () {
                             context.pushNamed(Routes.signupScreen);
                           },
-                          child: RichText(
-                              text: TextSpan(children: <TextSpan>[
-                            TextSpan(
-                                text: 'Don\'t have an account yet? ',
-                                style: Styles.font12blackw4n),
-                            TextSpan(
-                                text: 'Contact Us  ', style: Styles.font13mainBluew4n),
-                          ])),
+                          child: GestureDetector(
+                            onTap: ()async {
+                                            await launchInBrowser(Uri.parse('https://www.gp2it.com/contactus'));
+
+                            },
+                            child: RichText(
+                                text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                  text: 'Don\'t have an account yet? ',
+                                  style: Styles.font12blackw4n),
+                              TextSpan(
+                                  text: 'Contact Us  ', style: Styles.font13mainBluew4n),
+                            ])),
+                          ),
                         ),
       ],
     );

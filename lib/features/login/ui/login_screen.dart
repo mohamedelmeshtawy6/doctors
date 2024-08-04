@@ -52,7 +52,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           buttonName: 'Login',
                           onpress: ()async {
                       bool result=   await context.read<SettingCubit>().checkInternetConnection();
-                        result?    context.read<LoginCubit>().validatenThenLogin():  log('no internet');
+                      if(mounted){
+ result?    context.read<LoginCubit>().validatenThenLogin():  log('no internet');
+                      }
+                       
                           }),
                       verticalSpacer(
                         50,
